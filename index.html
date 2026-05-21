@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta property="og:title" content="성경강연회 초대장 — 나를 살리신 사랑">
+<meta property="og:description" content="2026년 6월 15일(월) ~ 21일(주일) | 익산교회 대강당 | 강사: 최호영 목사">
+<meta property="og:image" content="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=600">
+<meta property="og:type" content="website">
+<title>성경강연회 초대장</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A96E;
+    --gold-light: #E8D5A8;
+    --dark: #0D0A06;
+    --dark2: #1A1208;
+    --dark3: #241A0A;
+    --red: #B83333;
+    --cream: #F5EDD8;
+    --cream2: #EDE0C4;
+    --text: #2A1F0E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--dark);
+    font-family: 'Noto Sans KR', sans-serif;
+    color: var(--cream);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    width: 100%;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(160deg, #1a0d02 0%, #0d0a06 60%, #1c0f04 100%);
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 30%, rgba(180,120,40,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(184,51,51,0.10) 0%, transparent 60%);
+  }
+
+  .cross-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -55%);
+    width: 3px;
+    height: 280px;
+    background: linear-gradient(to bottom, transparent, rgba(201,169,110,0.6), transparent);
+    animation: crossPulse 3s ease-in-out infinite;
+  }
+  .cross-glow::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140px; height: 3px;
+    background: linear-gradient(to right, transparent, rgba(201,169,110,0.6), transparent);
+  }
+  @keyframes crossPulse {
+    0%,100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+
+  .particles {
+    position: absolute; inset: 0; pointer-events: none;
+  }
+  .particle {
+    position: absolute;
+    width: 2px; height: 2px;
+    border-radius: 50%;
+    background: var(--gold);
+    animation: float linear infinite;
+    opacity: 0;
+  }
+  @keyframes float {
+    0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.6; }
+    100% { transform: translateY(-10vh) translateX(40px); opacity: 0; }
+  }
+
+  .hero-church {
+    position: relative;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.3s;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .hero-sub {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--gold-light);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.5s;
+    margin-bottom: 20px;
+  }
+
+  .hero-title-ko {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(38px, 10vw, 58px);
+    font-weight: 900;
+    line-height: 1.15;
+    text-align: center;
+    color: var(--cream);
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.7s;
+    position: relative;
+  }
+  .hero-title-ko span {
+    color: var(--red);
+    display: inline-block;
+    animation: shimmer 3s ease-in-out infinite 2s;
+  }
+  @keyframes shimmer {
+    0%,100% { text-shadow: 0 0 20px rgba(184,51,51,0.4); }
+    50% { text-shadow: 0 0 40px rgba(184,51,51,0.8), 0 0 80px rgba(184,51,51,0.3); }
+  }
+
+  .hero-verse {
+    margin-top: 28px;
+    padding: 18px 24px;
+    border-left: 2px solid var(--gold);
+    max-width: 320px;
+    text-align: left;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 1s;
+  }
+  .hero-verse p {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 13px;
+    line-height: 1.9;
+    color: var(--cream2);
+    font-weight: 400;
+  }
+  .hero-verse cite {
+    display: block;
+    margin-top: 8px;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    font-style: normal;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 1.5s;
+  }
+  .hero-scroll span { font-size: 10px; letter-spacing: 0.2em; color: var(--gold); }
+  .scroll-line {
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollDrop 1.5s ease-in-out infinite;
+  }
+  @keyframes scrollDrop {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  /* ── INFO CARD ── */
+  .info-section {
+    background: var(--dark2);
+    padding: 48px 24px;
+    position: relative;
+  }
+  .info-section::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 32px;
+    opacity: 0;
+    transition: opacity 0.6s, transform 0.6s;
+    transform: translateY(20px);
+  }
+  .section-label.visible { opacity: 1; transform: translateY(0); }
+
+  .info-grid {
+    display: grid;
+    gap: 16px;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .info-card {
+    background: rgba(201,169,110,0.06);
+    border: 1px solid rgba(201,169,110,0.2);
+    border-radius: 4px;
+    padding: 20px 22px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s, transform 0.6s;
+  }
+  .info-card.visible { opacity: 1; transform: translateY(0); }
+
+  .info-icon {
+    width: 36px; height: 36px;
+    min-width: 36px;
+    background: rgba(201,169,110,0.12);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+  }
+
+  .info-label {
+    font-size: 10px; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 4px;
+  }
+  .info-value {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px; font-weight: 600;
+    color: var(--cream); line-height: 1.6;
+  }
+  .info-sub { font-size: 12px; color: var(--cream2); margin-top: 2px; line-height: 1.5; }
+
+  /* ── INTRO ── */
+  .intro-section {
+    background: linear-gradient(180deg, var(--dark2), var(--dark3));
+    padding: 56px 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ornament {
+    display: flex; align-items: center; gap: 12px;
+    justify-content: center; margin-bottom: 28px;
+  }
+  .ornament-line { flex: 1; height: 1px; max-width: 60px;
+    background: linear-gradient(to right, transparent, var(--gold)); }
+  .ornament-line.r { background: linear-gradient(to left, transparent, var(--gold)); }
+  .ornament-diamond {
+    width: 6px; height: 6px; background: var(--gold);
+    transform: rotate(45deg);
+  }
+
+  .intro-body {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px; line-height: 2.1;
+    color: var(--cream2);
+    max-width: 340px; margin: 0 auto;
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.8s, transform 0.8s;
+  }
+  .intro-body.visible { opacity: 1; transform: translateY(0); }
+  .intro-body strong { color: var(--gold); font-weight: 600; }
+
+  /* ── PROGRAM ── */
+  .program-section {
+    background: var(--dark);
+    padding: 56px 24px 48px;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 22px; font-weight: 700;
+    color: var(--cream);
+    text-align: center;
+    margin-bottom: 8px;
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.6s, transform 0.6s;
+  }
+  .section-title.visible { opacity: 1; transform: translateY(0); }
+  .section-title span { color: var(--gold); }
+
+  .program-list {
+    max-width: 380px;
+    margin: 36px auto 0;
+    display: grid;
+    gap: 0;
+  }
+
+  .day-item {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 0;
+    position: relative;
+    opacity: 0; transform: translateX(-20px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  .day-item.visible { opacity: 1; transform: translateX(0); }
+
+  .day-item:not(:last-child) .day-line {
+    position: absolute;
+    left: 31px; top: 44px; bottom: 0;
+    width: 1px;
+    background: rgba(201,169,110,0.25);
+  }
+
+  .day-num-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+  }
+  .day-dot {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    background: var(--dark);
+    position: relative; z-index: 1;
+    transition: background 0.3s;
+  }
+  .day-item:hover .day-dot { background: var(--gold); }
+  .day-badge {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-top: 4px;
+    font-weight: 700;
+  }
+
+  .day-content {
+    padding: 8px 0 28px 16px;
+    border-bottom: 1px solid rgba(201,169,110,0.1);
+    margin-bottom: 0;
+  }
+  .day-item:last-child .day-content { border-bottom: none; }
+
+  .day-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px; font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .day-desc {
+    font-size: 12px; line-height: 1.9;
+    color: rgba(232,213,168,0.65);
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: linear-gradient(180deg, var(--dark3), #1a0d02);
+    padding: 60px 28px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 40% at 50% 50%, rgba(201,169,110,0.08) 0%, transparent 70%);
+  }
+
+  .cta-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 20px; font-weight: 700;
+    color: var(--cream);
+    line-height: 1.6; margin-bottom: 20px;
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.7s, transform 0.7s;
+    position: relative;
+  }
+  .cta-title.visible { opacity: 1; transform: translateY(0); }
+
+  .cta-body {
+    font-size: 14px; line-height: 2;
+    color: var(--cream2);
+    margin-bottom: 36px;
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.7s 0.15s, transform 0.7s 0.15s;
+    position: relative;
+  }
+  .cta-body.visible { opacity: 1; transform: translateY(0); }
+
+  .cta-verse {
+    background: rgba(201,169,110,0.08);
+    border: 1px solid rgba(201,169,110,0.25);
+    border-radius: 4px;
+    padding: 22px 24px;
+    max-width: 340px;
+    margin: 0 auto 32px;
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.7s 0.3s, transform 0.7s 0.3s;
+    position: relative;
+  }
+  .cta-verse.visible { opacity: 1; transform: translateY(0); }
+  .cta-verse p {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 13px; line-height: 2;
+    color: var(--cream2);
+  }
+  .cta-verse cite {
+    display: block; margin-top: 10px;
+    font-size: 11px; color: var(--gold);
+    letter-spacing: 0.1em; font-style: normal;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--dark);
+    padding: 32px 28px;
+    text-align: center;
+    border-top: 1px solid rgba(201,169,110,0.15);
+  }
+  .footer-church {
+    font-size: 13px; font-weight: 700;
+    color: var(--gold); margin-bottom: 4px;
+    letter-spacing: 0.05em;
+  }
+  .footer-sub { font-size: 11px; color: rgba(232,213,168,0.5); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* delay helpers */
+  .d1 { transition-delay: 0.1s !important; }
+  .d2 { transition-delay: 0.2s !important; }
+  .d3 { transition-delay: 0.3s !important; }
+  .d4 { transition-delay: 0.4s !important; }
+  .d5 { transition-delay: 0.5s !important; }
+  .d6 { transition-delay: 0.6s !important; }
+  .d7 { transition-delay: 0.7s !important; }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="cross-glow"></div>
+
+  <!-- particles -->
+  <div class="particles" id="particles"></div>
+
+  <div class="hero-church">대한예수교 침례회 · 익산교회</div>
+  <div class="hero-sub">BIBLE SEMINAR 2026</div>
+
+  <div class="hero-title-ko">
+    나를 살리신<br><span>사&nbsp;랑</span>
+  </div>
+
+  <div class="hero-verse">
+    <p>예수께서 가라사대<br>
+    나는 부활이요 생명이니<br>
+    나를 믿는 자는 죽어도 살겠고</p>
+    <cite>요한복음 11:25</cite>
+  </div>
+
+  <div class="hero-scroll">
+    <span>SCROLL</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ── INFO ── -->
+<section class="info-section">
+  <div class="section-label reveal">SCHEDULE &amp; VENUE</div>
+  <div class="info-grid">
+    <div class="info-card reveal d1">
+      <div class="info-icon">📅</div>
+      <div>
+        <div class="info-label">일시</div>
+        <div class="info-value">2026년 6월 15일(월) ~ 21일(주일)</div>
+        <div class="info-sub">월~토 오후 7:30 / 주일 오전 11:00</div>
+      </div>
+    </div>
+    <div class="info-card reveal d2">
+      <div class="info-icon">📍</div>
+      <div>
+        <div class="info-label">장소</div>
+        <div class="info-value">익산교회 대강당</div>
+        <div class="info-sub">대한예수교 침례회 익산교회</div>
+      </div>
+    </div>
+    <div class="info-card reveal d3">
+      <div class="info-icon">🎤</div>
+      <div>
+        <div class="info-label">강사</div>
+        <div class="info-value">최호영 목사</div>
+        <div class="info-sub">LIFEWORD MISSION</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── INTRO ── -->
+<section class="intro-section">
+  <div class="ornament">
+    <div class="ornament-line"></div>
+    <div class="ornament-diamond"></div>
+    <div class="ornament-line r"></div>
+  </div>
+
+  <div class="intro-body reveal">
+    누구나 마주하게 될 <strong>죽음이라는 낭떠러지</strong>,<br>
+    피할 수 없는 인생의 마지막 질문,<br>
+    <strong>「나는 어디로 가는가?」</strong><br><br>
+    그 영원한 여정의 답을<br>
+    성경에서 함께 찾아보시기를<br>
+    진심으로 초대합니다.
+  </div>
+
+  <div style="margin-top: 32px; padding: 20px 24px; border-left: 2px solid var(--gold); text-align: left; max-width: 320px; margin-left: auto; margin-right: auto;">
+    <p style="font-family:'Noto Serif KR',serif; font-size:13px; line-height:2; color:var(--cream2);">
+      나 여호와가 말하노라 너희를 향한 나의 생각은 내가 아나니<br>
+      재앙이 아니라 곧 평안이요 너희 장래에 소망을 주려 하는 생각이라
+    </p>
+    <p style="margin-top:8px; font-size:11px; color:var(--gold); letter-spacing:0.1em;">예레미야 29:11</p>
+  </div>
+</section>
+
+<!-- ── PROGRAM ── -->
+<section class="program-section">
+  <div class="section-label reveal">PROGRAMS BY DATE · 날짜별 프로그램</div>
+  <div class="section-title reveal"><span>7일간의</span> 말씀 여정</div>
+
+  <div class="program-list">
+
+    <div class="day-item reveal d1">
+      <div class="day-line"></div>
+      <div class="day-num-wrap">
+        <div class="day-dot"></div>
+        <div class="day-badge">DAY 1</div>
+      </div>
+      <div class="day-content">
+        <div class="day-title">나는 무엇을 위해 살아가는가?</div>
+        <div class="day-desc">
+          천지를 지으신 분은 어떤 분인가.<br>
+          인간이 신을 찾을 수 있는 방법은?<br>
+          성경은 어떻게 형성되었고 창조를 과학적으로 증명할 수 있는가?
+        </div>
+      </div>
+    </div>
+
+    <div class="day-item reveal d2">
+      <div class="day-line"></div>
+      <div class="day-num-wrap">
+        <div class="day-dot"></div>
+        <div class="day-badge">DAY 2</div>
+      </div>
+      <div class="day-content">
+        <div class="day-title">창세기 내용은 신화인가? 사실인가?</div>
+        <div class="day-desc">
+          에덴동산은 어디에 있는가?<br>
+          노아의 홍수는 정말 있었는가?
+        </div>
+      </div>
+    </div>
+
+    <div class="day-item reveal d3">
+      <div class="day-line"></div>
+      <div class="day-num-wrap">
+        <div class="day-dot"></div>
+        <div class="day-badge">DAY 3</div>
+      </div>
+      <div class="day-content">
+        <div class="day-title">이스라엘에 대한 예언과 성취</div>
+        <div class="day-desc">
+          이스라엘 민족을 선민으로 택한 이유는?<br>
+          이스라엘 역사와 성경의 상관성은?<br>
+          이스라엘 민족의 멸망과 회복은 우리와 무슨 관계가 있을까?
+        </div>
+      </div>
+    </div>
+
+    <div class="day-item reveal d4">
+      <div class="day-line"></div>
+      <div class="day-num-wrap">
+        <div class="day-dot"></div>
+        <div class="day-badge">DAY 4</div>
+      </div>
+      <div class="day-content">
+        <div class="day-title">성경에 나타난 인류역사의 현재와 미래</div>
+        <div class="day-desc">
+          앞으로 인류의 미래는 어떻게 되는가?<br>
+          지진, 기근, 이상 기후, 전염병, 전쟁이 나와 무슨 관계가 있는가?<br>
+          과연 좋은 세상, 평화로운 세상이 올 것인가?
+        </div>
+      </div>
+    </div>
+
+    <div class="day-item reveal d5">
+      <div class="day-line"></div>
+      <div class="day-num-wrap">
+        <div class="day-dot"></div>
+        <div class="day-badge">DAY 5</div>
+      </div>
+      <div class="day-content">
+        <div class="day-title">죽음 이후에 나는 어디로 가는 것일까?</div>
+        <div class="day-desc">
+          사람에게 영혼이 실재하는 것일까?<br>
+          죄는 어디에서 왔나?<br>
+          하나님께서 율법을 주신 목적은 무엇인가?<br>
+          죽음 이후에 천국과 지옥은 어떤 곳인가?
+        </div>
+      </div>
+    </div>
+
+    <div class="day-item reveal d6">
+      <div class="day-line"></div>
+      <div class="day-num-wrap">
+        <div class="day-dot"></div>
+        <div class="day-badge">DAY 6</div>
+      </div>
+      <div class="day-content">
+        <div class="day-title">천국이 있다면 나는 어떻게 해야 천국에 갈 수 있을까?</div>
+        <div class="day-desc">
+          내가 새벽에 열심히 기도하고, 봉사하고 많은 헌금을 하면 천국에 갈 수 있는 것일까?<br>
+          과연 천국 가기란 그렇게 어려운 문제인가?
+        </div>
+      </div>
+    </div>
+
+    <div class="day-item reveal d7">
+      <div class="day-num-wrap">
+        <div class="day-dot"></div>
+        <div class="day-badge">DAY 7</div>
+      </div>
+      <div class="day-content">
+        <div class="day-title">구원받은 이후에 신앙생활</div>
+        <div class="day-desc">
+          구원받은 이후의 죄문제와 교회 구별의 문제를 해결받는 시간
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section">
+  <div class="cta-title reveal">
+    소중한 분들을 모시고<br>함께 오시기를 바랍니다
+  </div>
+  <div class="cta-body reveal">
+    인생의 가장 근본적인 질문에 대한 답을<br>
+    성경 말씀을 통해 함께 찾아가는<br>
+    귀한 시간이 될 것입니다.<br><br>
+    가족, 친구, 이웃 누구든지<br>
+    환영합니다.
+  </div>
+  <div class="cta-verse reveal">
+    <p>
+      나 여호와가 말하노라 너희를 향한<br>
+      나의 생각은 내가 아나니<br>
+      재앙이 아니라 곧 평안이요<br>
+      너희 장래에 소망을 주려 하는 생각이라
+    </p>
+    <cite>예레미야 29:11</cite>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-church">대한예수교 침례회 익산교회</div>
+  <div class="footer-sub" style="margin-top:4px;">성경강연회 · BIBLE SEMINAR 2026</div>
+  <div class="footer-sub" style="margin-top:2px;">2026. 6. 15 (월) ~ 6. 21 (주일)</div>
+</footer>
+
+<script>
+// Particles
+const container = document.getElementById('particles');
+for (let i = 0; i < 18; i++) {
+  const p = document.createElement('div');
+  p.className = 'particle';
+  p.style.left = Math.random() * 100 + '%';
+  p.style.animationDuration = (6 + Math.random() * 8) + 's';
+  p.style.animationDelay = (Math.random() * 8) + 's';
+  p.style.width = p.style.height = (1 + Math.random() * 2) + 'px';
+  container.appendChild(p);
+}
+
+// Scroll reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
